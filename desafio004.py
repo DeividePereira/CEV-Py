@@ -1,0 +1,8 @@
+a = input('Digite algo. ')
+print(f'O que você digitou é \33[0;30;41mnumérico? {a.isnumeric()}\33[m')
+print(f'O que você digitou é \33[0;30;42malfabético? {a.isalpha()}\33[m')
+print(f'O que você digitou é \33[0;30;43malfanumérico? {a.isalnum()}\33[m')
+print(f'O que você digitou é/são \33[0;30;44mespaço(s)? {a.isspace()}\33[m')
+print(f'O que você digitou está em \33[0;30;45mmaiúsculo? {a.isupper()}\33[m')
+print(f'O que você digitou está em \33[0;30;46mminúsculo? {a.islower()}\33[m')
+print(f'O que você digitou está \33[0;30;47mcapitalizada? {a.istitle()}\33[m')
