@@ -41,5 +41,25 @@ while True:
                     break
             if pro == 'N':
                 break
+if men == 0:
+    print(f'Não há nenhum homem.')
+elif men == 1:
+    print(f'Há 1 homem.')
+else:
+    print(f'Há {men} homens.')
+
+if p_maiores == 0:
+    print('Nenhuma pessoa é maior de idade.')
+elif p_maiores == 1:
+    print('Há 1 pessoa maior de idade.')
+else:
+    print(f'Há {p_maiores} pessoas maiores de idade.')
+
+if mu_menores == 0:
+    print('Não há nenhuma mulher menor de idade.')
+elif mu_menores == 1:
+    print('Há 1 mulher menor de idade.')
+else:
+    print(f'Há {mu_menores} mulheres menores de idade.')
 print('\033[37mFinalizando...\033[m')
 sleep(1)
