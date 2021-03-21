@@ -11,8 +11,6 @@ while True:
     if j.isnumeric():
         print('Resposta inválida! Tente novamente!')
 
-#    elif j != 'P' and j != 'I' and j != "Í":
-#        print('Resposta inválida! Tente novamente!')
     elif j not in 'PIÍ':
         print('Resposta inválida! Tente novamente!')
     else:
