@@ -46,9 +46,9 @@ while True:
                         while nov != 'C' and 'D':
                             print('Resposta inválida! Tente novamente!')
                             nov = str(input('Continuar/Desistir: ')).strip().upper()[0]
-                    if nov == 'C':
+                    elif nov == 'C':
                         consec = 0
-                    if nov == 'D':
+                    elif nov == 'D':
                         break
             else:
                 print(f'{int(n)} + {c} = {int(n) + c} → \033[37mDeu ímpar!\033[m')
@@ -75,9 +75,9 @@ while True:
                             print('Resposta inválida! Tente novamente!')
                             nov = str(input('Continuar/Desistir: ')).strip().upper()[0]
 
-                    if nov == 'C':
+                    elif nov == 'C':
                         consec = 0
-                    if nov == 'D':
+                    elif nov == 'D':
                         break
 
 print(f'Você teve \033[33m{consec} vitórias consecutivas\033[m.')
