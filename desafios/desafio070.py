@@ -2,15 +2,10 @@ from time import sleep
 total = morett = cheapest = name_cheapest = 0
 counter = 1
 while True:
-    print('==-==-==-==-==-==-==-==-==-==')
-    print(f'\033[34mProduct Number {counter}\033[m')
-#    print(f'==-==-==-==-==-==-==-==-==-==\n\033[34m{"Cadastro de Pessoas":^29}\033[m\n==-==-==-==-==-==-==-==-==-==')
-
+    print('=-=' * 10, f'\n\033[34mProduct Number {counter}\033[m')
     name = str(input('Name of the product: ')).strip().title()
     if name.isnumeric() or name.isspace():
-        while name.isnumeric() or name.isspace():
-            print('Invalid value! Try again!')
-            name = str(input('Name of the product: ')).strip().title()
+        print('Invalid value! Try again!')
     else:
         cost = str(input('Cost of the product: US$'))
 
