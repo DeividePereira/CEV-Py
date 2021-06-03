@@ -1,19 +1,15 @@
-p1 = str('Um nome bem grande só pra testar mesmo')
-'''c1 = 1234.567
-print(f'R${c1:.2f}') #Alterando para sempre ter duas casas decimais
-c2 = 2345.678
-print(f'R${c1:.>28}')
-print(f'{p1:.<28}', end=f'R${c2}')
-print(f'{p1:.<28}', f'R${c1:.2f}')
-print(f'{p1:.<28}', f'R${c1:.2f}')'''
+list = (str(input('Digite o nome do produto 1: ')), float(input('Digite o preço do produto 1: ', )),
+        str(input('Digite o nome do produto 2: ')), float(input('Digite o preço do produto 2: ', )),
+        str(input('Digite o nome do produto 3: ')), float(input('Digite o preço do produto 3: ', )),
+        str(input('Digite o nome do produto 4: ')), float(input('Digite o preço do produto 4: ', )))
+print('-' * 40)
+print(f'{"Listagem de Preços":^40}')
+print('-' * 40)
 
-cc11 = 51.1
-cc12 = f'R${cc11:.2f}'  #Alterando para sempre ter duas casas decimais
-print(f'\n{p1:.<60}', f'{cc12:.>15}')  #Um espaço é adicionado se ficar na mesma linha.
+for posi in range(0, len(list)):
+    if posi % 2 == 0:
+        print(f'{list[posi]:.<30}')
+    else:
+        print(f'{list[posi]:7.2f}')
 
-cc21 = 66.649
-print(f'\n{p1:.<15}')
-'''if len(p1) > 30:  #Tentando criar um limitador de caracteres para o nome do produto
-#    p1.replace(p1.index(), '')
-for n in range(len(p1)):
-    print(n)'''
+print('-' * 40)
