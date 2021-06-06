@@ -1,15 +1,16 @@
-# 5 valores, ordene-os sem usar .sort
 list = list()
-cont = first = 0
-for n in range(0, 6):
+for n in range(1, 6):
     user = int(input('Digite um número natural: '))
-    cont += 1
-    if cont == 1:
+    if n == 1 or user >= max(list):
         list.append(user)
-        first = 1
-    if cont > 1 and user < first:
-        list.insert(first, user)
+        print(f'Adicionado ao final da lista.')
+        print(list)
     else:
-        list.insert(user, first)
-print(list)
-print(first)
+        posi = 0
+        while posi < len(list):
+            if user <= list[posi]:
+                list.insert(posi, user)
+                print(f'Adicionado na {posi + 1}° posição.')
+                break
+            posi += 1
+print(f'A lista é: {list}')
