@@ -13,4 +13,4 @@ for n in range(1, 6):
                 print(f'Adicionado na {posi + 1}° posição.')
                 break
             posi += 1
-print(f'A lista é: {list}')
+print(f'A lista resultante é: {list}\nEm ordem crescente é: {list}')
