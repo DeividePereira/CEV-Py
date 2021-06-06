@@ -10,7 +10,16 @@ for z in valores:
     print(f'{z}', end=' ')
 
 print('\n\033[37mProcessando...\033[m')
-sleep(0.5)
+sleep(0.2)
 
-print(f'O valor máximo é: {max(valores)}, na {valores.index(max(valores)) + 1}° posição.')
-print(f'O valor mínimo é: {min(valores)}, na {valores.index(min(valores)) + 1}° posição.')
+maior = max(valores)
+menor = min(valores)
+print(f'O valor máximo é: {max(valores)}, nas posições: ', end='')
+for i, v in enumerate(valores):
+    if v == maior:
+        print(f'{i + 1}, ', end='')
+
+print(f'\nO valor mínimo é: {min(valores)}, nas posições: ', end='')
+for i, v in enumerate(valores):
+    if v == menor:
+        print(f'{i + 1}, ', end='')
