@@ -1,16 +1,16 @@
 # Colocar todos em uma lista -> copiar para as duas outras listas -> separar em impares e pares
-# versão com num = int()
+# versão com num = int() e a passagem pras duas listas diferente.
 list = list()
-user = a = b = 0
+list_even = []
+list_odd = []
+user = 0
 while user != 'N':
-    num = str(input('Digite um número: '))
-    while not num.isnumeric():
-        num = str(input('Digite um número: '))
-    if list.count(int(num)) == 0:  #Checando se o valor é único.
-        list.append(int(num))
+    num = int(input('Digite um número: '))
+    if list.count(num) == 0:  #Checando se o valor é único.
+        list.append(num)
 
     user = str(input('Você gostaria de continuar?\033[40m[S/N]\033[m ')).strip().upper()
-    while user != 'S' and user != 'N' or user.isspace() or user == '':  #Checando se foi S ou N.
+    while user != 'S' and user != 'N' or user.isspace() or user == '':
         print('\033[31mResposta inválida! Tente novamente!\033[m')
         user = str(input('Você gostaria de continuar?\033[40m[S/N]\033[m ')).strip().upper()
         if user == 'N':
@@ -18,20 +18,14 @@ while user != 'N':
     if user == 'N':
         break
 
-list_even = list[:]
-print(f'Removendo da lista dos pares:', end='')
-for a in list_even:  # par
-    if a % 2 != 0:  # a % 2 != 0 -> resultados ímpares, remova-os
-        print(f' {a}', end='')
-        list_even.remove(a)
+for a in list:  # par
+    if a % 2 == 0:
+        list_even.append(a)
 
-print(f'Removendo da lista dos ímpares:', end='')
-list_odd = list[:]
-for b in list_odd:  # ímpar
-    if b % 2 == 0:  # b % 2 == 0 -> resultados pares, remova-os
-        print(f' {b}', end='')
-        list_odd.remove(b)
+for b in list:  # ímpar
+    if b % 2 != 0:
+        list_odd.append(b)
 
-print(f'Lista: {list}')
+print(f'\nLista: {list}')
 print(f'Lista com os números pares: {list_even}')
 print(f'Lista com os números ímpares: {list_odd}')

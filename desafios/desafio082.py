@@ -1,7 +1,9 @@
 # Colocar todos em uma lista -> copiar para as duas outras listas -> separar em impares e pares
 # versão com num = str()
 list = list()
-user = a = b = 0
+list_even = []
+list_odd = []
+user = 0
 while user != 'N':
     num = str(input('Digite um número: '))
     while not num.isnumeric():
@@ -18,19 +20,11 @@ while user != 'N':
     if user == 'N':
         break
 
-list_even = list[:]
-print(f'Removendo da lista dos pares:', end='')
-for a in list_even:  # par
-    if a % 2 != 0:  # a % 2 != 0 -> resultados ímpares, remova-os
-        print(f' {a}', end='')
-        list_even.remove(a)
-
-print(f'Removendo da lista dos ímpares:', end='')
-list_odd = list[:]
-for b in list_odd:  # ímpar
-    if b % 2 == 0:  # b % 2 == 0 -> resultados pares, remova-os
-        print(f' {b}', end='')
-        list_odd.remove(b)
+for indice, valor in enumerate(list):
+    if valor % 2 == 0:
+        list_even.append(valor)
+    if valor % 2 != 0:
+        list_odd.append(valor)
 
 print(f'Lista: {list}')
 print(f'Lista com os números pares: {list_even}')
