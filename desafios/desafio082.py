@@ -21,9 +21,9 @@ while user != 'N':
         break
 
 for indice, valor in enumerate(list):
-    if valor % 2 == 0:
+    if valor % 2 == 0:  # par
         list_even.append(valor)
-    if valor % 2 != 0:
+    elif valor % 2 != 0:  # ímpar - poderia ser um else
         list_odd.append(valor)
 
 print(f'Lista: {list}')

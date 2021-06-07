@@ -18,13 +18,11 @@ while user != 'N':
     if user == 'N':
         break
 
-for a in list:  # par
+for a in list:
     if a % 2 == 0:
-        list_even.append(a)
-
-for b in list:  # ímpar
-    if b % 2 != 0:
-        list_odd.append(b)
+        list_even.append(a)  # par
+    else:
+        list_odd.append(a)  # ímpar
 
 print(f'\nLista: {list}')
 print(f'Lista com os números pares: {list_even}')
