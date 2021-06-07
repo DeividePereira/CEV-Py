@@ -3,8 +3,10 @@
 # B) a lista de núm de forma decrescente
 # C) se o valor 5 foi digitado ou está na lista.
 # todos estão com erro
+from random import randint
 list = []
 user = 0
+
 while user != 'N':
     num = str(input('Digite um número: '))
     while not num.isnumeric():
@@ -21,11 +23,26 @@ while user != 'N':
     if user == 'N':
         break
 
-print(f'Foram dados {len(list)} números.')
-# list_rev = list.sort()[::-1]  #TypeError: 'NoneType' object is not subscriptable
-# print(f'A lista decrescente é:\n{list_rev}')  #erro: <built-in method reverse of list object at 0x7f46c0e194c0>
-# print(f'A lista decrescente é:\n{list.reverse()}')  #erro: "None"
-list.sort()
+print(f'Foram dados {len(list)} números únicos.')
+print(list)
+
+#1 list_rev = list.sort()[::-1]  #TypeError: 'NoneType' object is not subscriptable
+#2 print(f'A lista decrescente é:\n{list_rev}')  #erro: <built-in method reverse of list object at 0x7f46c0e194c0>
+#3 print(f'A lista decrescente é:\n{list.reverse()}')  #erro: "None"
+
+print(list.sort())  #4
+list.sort()  #está dando erro pq está como STR
+print(list[::-1])
 list_rev = list[::-1]
-print(f'A lista decrescente é:\n{list_rev}')
-print(f'O número 5 apareceu {list.count("5")} vezes.')
+print(f'A lista decrescente é:\n{list_rev}')  #erro desconhecido
+
+if list.count('5') == 0:
+    print('O número 5 não apareceu na lista.')
+else:
+    print(f'O número 5 apareceu na lista.')
+
+n_random = randint(int(min(list)), int(max(list)))  #Se há um número aleatório entre o mínimo e o máximo da lista.
+if list.count(f'{n_random}') == 0:
+    print(f'O número {n_random} não apareceu na lista.')
+else:
+    print(f'O número {n_random} apareceu na lista.')
