@@ -1,37 +1,30 @@
-# Colocar todos em uma lista -> copiar para as duas outras listas -> separar em impares e pares
-# versão com num = int()
+# versão separação entre par e ímpar feita no início
+from time import sleep
 list = list()
-user = a = b = 0
+list_par = []
+list_impar = []
+user = 0
 while user != 'N':
     num = str(input('Digite um número: '))
     while not num.isnumeric():
         num = str(input('Digite um número: '))
     if list.count(int(num)) == 0:  #Checando se o valor é único.
         list.append(int(num))
+        if int(num) % 2 == 0:  #Checando se é par.
+            list_par.append(int(num))
+        if int(num) % 2 != 0:  #Chechando se é ímpar.
+            list_impar.append(int(num))
 
     user = str(input('Você gostaria de continuar?\033[40m[S/N]\033[m ')).strip().upper()
     while user != 'S' and user != 'N' or user.isspace() or user == '':  #Checando se foi S ou N.
         print('\033[31mResposta inválida! Tente novamente!\033[m')
+        sleep(0.1)
         user = str(input('Você gostaria de continuar?\033[40m[S/N]\033[m ')).strip().upper()
         if user == 'N':
             break
     if user == 'N':
         break
-
-list_even = list[:]
-print(f'Removendo da lista dos pares:', end='')
-for a in list_even:  # par
-    if a % 2 != 0:  # a % 2 != 0 -> resultados ímpares, remova-os
-        print(f' {a}', end='')
-        list_even.remove(a)
-
-print(f'Removendo da lista dos ímpares:', end='')
-list_odd = list[:]
-for b in list_odd:  # ímpar
-    if b % 2 == 0:  # b % 2 == 0 -> resultados pares, remova-os
-        print(f' {b}', end='')
-        list_odd.remove(b)
-
+print('-' * 50)
 print(f'Lista: {list}')
-print(f'Lista com os números pares: {list_even}')
-print(f'Lista com os números ímpares: {list_odd}')
+print(f'Lista com os números pares: {list_par}')
+print(f'Lista com os números ímpares: {list_impar}')

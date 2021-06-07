@@ -23,8 +23,10 @@ print(f'Foram dados {len(list)} números\033[33m únicos\033[m.')
 list.sort()
 list_rev = list[::-1]
 print(f'\033[36mA lista decrescente é:\n{list_rev}\033[m')
+# poderia ser feito list.sort(reverse=True) // mas precisaria estar como int.
 
-if list.count(5) == 0:
+
+if list.count(5) == 0:  #poderia ser if 5 in list:
     print('O número 5 não apareceu na lista.')
 else:
     print(f'O número 5 apareceu na lista.')
