@@ -1,9 +1,9 @@
 #matriz 3x3, começando do 0,0 -> 0,0
 list = ([], [], [], [], [], [], [], [], [])
-x = y = n = a = b = 0
+x = y = contador = 0
 print('Uma matriz quadrada 3x3 é composta de 9 elementos.')
 for n in range(0, 9):
-    valor = int(input(f'Digite o valor inteiro do elemento {x+1}x{y+1}: '))  #Obs.: Apenas números
+    valor = int(input(f'Digite o valor inteiro do elemento ({x+1},{y+1}): '))  #Obs.: Apenas números
 
     if x == 2:    #((0,0), (1,0), (2,0), (0,1), (1,1), (2,1), (0,2), (1,2), (2,2))
         x = 0
@@ -17,8 +17,9 @@ for n in range(0, 9):
 
 for a in list:     #a é cada item da list.
     for b in a:    #b é cada item de cada lista, ou subitem da list.
-        print(f'| {b:^5} |', end='')
-        #if b == 3 or b == 6:
-        if b != 0 and b % 3 == 0:  #Só funciona com 1 dígito
-            print('\n', end='')
-        #if b != 0 and b:
+        print(f'| {b:^5} ', end='')
+
+        if contador != 0 and (contador % 3) - 2 == 0:  #(8 % 3)-2;
+            # quero que dê 0; matriz 3x3; n = 0;
+            print('|\n', end='')
+        contador += 1
