@@ -20,6 +20,5 @@ for a in list:     #a é cada item da list.
         print(f'| {b:^5} ', end='')
 
         if contador != 0 and (contador % 3) - 2 == 0:  #(8 % 3)-2;
-            # quero que dê 0; matriz 3x3; n = 0;
             print('|\n', end='')
         contador += 1

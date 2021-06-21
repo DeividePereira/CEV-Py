@@ -1,10 +1,10 @@
-# Melhoria do desafio086; matriz 3x3, começando do 0,0 -> 0,0; a) a soma de todas os valores pares digitados;
+# Melhoria do desafio086; matriz 3x3; a) a soma de todas os valores pares digitados;
 # b) A soma dos valores da terceira coluna; c) O maior valor da segunda linha
 list = ([], [], [], [], [], [], [], [], [])
 x = y = contador = soma_pares = maior_l2 = soma_c3 = 0
 print('Uma matriz quadrada 3x3 é composta de 9 elementos.')
 for n in range(0, 9):
-    valor = int(input(f'Digite o valor inteiro do elemento ({x+1},{y+1}): '))  #Obs.: Apenas números
+    valor = int(input(f'Digite o valor inteiro do elemento ({x + 1},{y + 1}): '))  #Obs.: Apenas números
     if valor % 2 == 0:
         soma_pares += valor
 
@@ -23,7 +23,7 @@ for n in range(0, 9):
             if valor > maior_l2:
                 maior_l2 = valor
 
-    list[n].append(valor)     #len(list) == n -> é o número de listas
+    list[n].append(valor)     #len(list) == n -> é o número de sub-listas
     n += 1
 print('-' * 40, 'Sua matriz 3x3 é: ')
 for a in list:     #a é cada item da list.
