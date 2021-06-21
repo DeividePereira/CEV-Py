@@ -1,5 +1,6 @@
 # Melhoria do desafio086b; matriz NxN, o usuário deve determinar N. Desafio proposto por mim mesmo.
 # a) a soma de todas os valores pares digitados; b) A soma dos valores da coluna 3; c) O maior valor da linha 2
+# obs.: foi usado mais matemática do que programação(lista dentro de listas)
 list = list()
 list_elemento = []
 x = y = ex_cont = contador = soma_pares = maior_l2 = soma_c3 = 0
@@ -25,16 +26,30 @@ print('-' * 45)
 
 for n in range(0, sudo):
     elemento = int(input(f'Digite um valor inteiro do elemento ({x+1},{y+1}): '))
+
+    if elemento % 2 == 0:
+        soma_pares += elemento
     list_elemento.append(elemento)
-    if x == user:    #((0,0), (1,0),..., (user,0) (0,1), (1,1),..., (user,1),..., (user, user)
+    list.append(list_elemento[:])
+    list_elemento.clear()
+
+    if user < 3:    #Menor que 3x3
+        soma_c3 = 'Inválido, pois não existe terceira coluna.'
+    elif x == 3:    #Parâmetro para terceira coluna.
+        soma_c3 += elemento
+
+    if x == 0 and y == 2:   #Parâmetro para segunda linha.
+        maior_l2 = elemento
+    elif y == 2 and elemento > maior_l2:
+        maior_l2 = elemento
+
+    if x + 1 == user:    #((0,0), (1,0),..., (user,0) (0,1), (1,1),..., (user,1),..., (user, user)
         x = 0
         y += 1
     elif x == user and y == user:  #Fim da matriz NxN
         break
     else:
-        x += 1
-    list.append(list_elemento[:])
-    list_elemento.clear()
+        x += 1      #A contagem de x e y está incorreta.
     n += 1
 
 print('-' * 45)
@@ -47,6 +62,7 @@ for a in list:     #a é cada item da list.
             contador = 0
         else:
             contador += 1
-# deve haver \n quando a coluna for N, ou seja, quando o contador == user.
-
-print(f'{list}')
+print('-' * 45)
+print(f'O somatório dos números pares é: {soma_pares}')
+print(f'O somatório dos números da terceira coluna é: {soma_c3}')
+print(f'O maior valor da segunda linha é: {maior_l2}')
