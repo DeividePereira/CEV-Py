@@ -1,7 +1,8 @@
 #matriz NxN, o usuário deve determinar N. Desafio proposto por mim mesmo.
 list = list()
 list_elemento = []
-x = y = ex_cont = contador = 0
+ex_cont = contador = 0
+y = x = 1
 print('Uma matriz quadrada é composta por linha e coluna de mesmo tamanho, ou seja, uma matriz AxA.')
 exemplo = ([1], [2], [3], [4])
 print('Exemplo de uma matriz quadrada 2x2: ')
@@ -23,20 +24,21 @@ print(f'Esta matriz terá {sudo} elementos.')
 print('-' * 45)
 
 for n in range(0, sudo):
-    elemento = int(input(f'Digite um valor inteiro do elemento ({x+1},{y+1}): '))
+    elemento = int(input(f'Digite um valor inteiro do elemento ({x},{y}): '))
     list_elemento.append(elemento)
-    if x == user:    #((0,0), (1,0),..., (user,0) (0,1), (1,1),..., (user,1),..., (user, user)
-        x = 0
-        y += 1
+    list.append(list_elemento[:])
+    list_elemento.clear()
+
+    if y == user:    #((0,0), (1,0),..., (user,0) (0,1), (1,1),..., (user,1),..., (user, user)
+        y = 1
+        x += 1
     elif x == user and y == user:  #Fim da matriz NxN
         break
     else:
-        x += 1
-    list.append(list_elemento[:])
-    list_elemento.clear()
+        y += 1
     n += 1
-
 print('-' * 45)
+print(f'Sua matriz {user}x{user} é: ')
 for a in list:     #a é cada item da list.
     for b in a:    #b é cada item de cada lista, ou subitem da list.
         print(f'| {b:^5} ', end='')

@@ -3,7 +3,8 @@
 # obs.: foi usado mais matemática do que programação(lista dentro de listas)
 list = list()
 list_elemento = []
-x = y = ex_cont = contador = soma_pares = maior_l2 = soma_c3 = 0
+ex_cont = contador = soma_pares = maior_l2 = soma_c3 = 0
+y = x = 1
 print('Uma matriz quadrada é composta por linha e coluna de mesmo tamanho, ou seja, uma matriz AxA.')
 exemplo = ([1], [2], [3], [4])
 print('Exemplo de uma matriz quadrada 2x2: ')
@@ -25,8 +26,9 @@ print(f'Esta matriz terá {sudo} elementos.')
 print('-' * 45)
 
 for n in range(0, sudo):
-    elemento = int(input(f'Digite um valor inteiro do elemento ({x+1},{y+1}): '))
-
+    elemento = int(input(f'Digite um valor inteiro do elemento ({x},{y}): '))  #alterado para = 1
+    # x: horizontal, altera a coluna; y: vertical, altera a linha. A ideia é preencher todas as COLUNAS e dps
+    # alterar a LINHA e reiniciar a coluna.
     if elemento % 2 == 0:
         soma_pares += elemento
     list_elemento.append(elemento)
@@ -35,21 +37,21 @@ for n in range(0, sudo):
 
     if user < 3:    #Menor que 3x3
         soma_c3 = 'Inválido, pois não existe terceira coluna.'
-    elif x == 3:    #Parâmetro para terceira coluna.
+    elif y == 3:    #Parâmetro para terceira coluna.
         soma_c3 += elemento
 
-    if x == 0 and y == 2:   #Parâmetro para segunda linha.
+    if y == 0 and x == 2:   #Parâmetro para segunda linha.
         maior_l2 = elemento
-    elif y == 2 and elemento > maior_l2:
+    elif x == 2 and elemento > maior_l2:
         maior_l2 = elemento
 
-    if x + 1 == user:    #((0,0), (1,0),..., (user,0) (0,1), (1,1),..., (user,1),..., (user, user)
-        x = 0
-        y += 1
-    elif x == user and y == user:  #Fim da matriz NxN
+    if y == user:    #((1,1), (2,1),..., (user,1) (1,2), (2,2),..., (user,2),..., (user, user)
+        y = 1
+        x += 1
+    elif y == user and x == user:  #Fim da matriz NxN
         break
     else:
-        x += 1      #A contagem de x e y está incorreta.
+        y += 1      #A contagem de x e y está incorreta.
     n += 1
 
 print('-' * 45)
