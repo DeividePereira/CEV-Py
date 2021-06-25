@@ -1,6 +1,5 @@
 # Melhoria do desafio086b; matriz NxN, o usuário deve determinar N. Desafio proposto por mim mesmo.
 # a) a soma de todas os valores pares digitados; b) A soma dos valores da coluna 3; c) O maior valor da linha 2
-# obs.: foi usado mais matemática do que programação(lista dentro de listas)
 list = list()
 list_elemento = []
 ex_cont = contador = soma_pares = maior_l2 = soma_c3 = 0
@@ -17,9 +16,9 @@ for e in exemplo:
 print('-' * 45)
 
 user = int(input('Determine o N de uma matriz quadrada NxN: '))
-while user < 1:
+while user <= 1:
     print('\033[31mUma matriz deve ser maior que 1. Tente novamente!\033[m')
-    user = int(input('Determine o N de uma matriz quadrada NxN: '))
+    user = int(input('Determine o N de uma matriz NxN: '))
 
 sudo = user * user  #Quantidade de elementos.
 print(f'Esta matriz terá {sudo} elementos.')
@@ -27,8 +26,7 @@ print('-' * 45)
 
 for n in range(0, sudo):
     elemento = int(input(f'Digite um valor inteiro do elemento ({x},{y}): '))  #alterado para = 1
-    # x: horizontal, altera a coluna; y: vertical, altera a linha. A ideia é preencher todas as COLUNAS e dps
-    # alterar a LINHA e reiniciar a coluna.
+
     if elemento % 2 == 0:
         soma_pares += elemento
     list_elemento.append(elemento)

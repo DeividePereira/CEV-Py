@@ -1,34 +1,59 @@
-# Nome e peso de várias pessoas, tudo isso em uma lista///
-# A) Quantas pessoas foram cadastradas///
-# B) Uma listagem com as pessoas mais pesadas C) e uma com os mais leves.
-# Fazer uma lista com ...
-dados = []
-pessoas = []
+dados = list()
+pessoas = list()
+nome_maior_peso = list()
+nome_menor_peso = list()
 num = 1
+maior_peso = menor_peso = 1
+
 while True:
     nome = str(input(f'Digite o nome da pessoa n°{num}: ')).strip().title()
     while nome.isnumeric() or len(nome) == 0:
-        print('Resposta inválida! Tente novamente.')
+        print('\033[31mResposta inválida! Tente novamente.\033[m')
         nome = str(input(f'Digite o nome da pessoa n°{num}: ')).strip().title()
     dados.append(nome)
 
-    peso = float(input(f'Digite o peso da pessoa n°{num}: '))
+    peso = float(input(f'Digite o peso, em kg, da pessoa n°{num}: '))
     while str(peso).isalpha():
-        print('Resposta inválida! Tente novamente.')
-        peso = float(input(f'Digite o peso da pessoa n°{num}: '))
+        print('\033[31mResposta inválida! Tente novamente.\033[m')
+        peso = float(input(f'Digite o peso, em kg, da pessoa n°{num}: '))
+    # O primeiro peso como parâmetro, marcar quem é o dono pelo num.
+    if num == 1:        #Desse modo, não vai contar o nome da primeira pessoa no maior e menor.
+        maior_peso = peso
+        nome_maior_peso.append(nome)
+        menor_peso = peso
+        nome_menor_peso.append(nome)
+    else:
+        if peso > maior_peso:
+            maior_peso = peso
+            nome_maior_peso.clear()
+            nome_maior_peso.append(nome)
+
+        elif peso == maior_peso:
+            nome_maior_peso.append(nome)
+
+        elif peso < menor_peso:
+            menor_peso = peso
+            nome_menor_peso.clear()
+            nome_menor_peso.append(nome)
+
+        elif peso == menor_peso:
+            nome_menor_peso.append(nome)
+
     dados.append(peso)
     pessoas.append(dados[:])  #Passando a lista dados para a lista pessoas.
     dados.clear()
 
     user = str(input('Deseja continuar?\033[40m[S/N]\033[m ')).upper()
-    while user != 'N' and user != 'S' or user.isspace() or user.isnumeric():
-        print('Resposta inválida! Tente novamente.')
+    while user != 'N' and user != 'S' or user.isspace() or user.isnumeric() or len(user) == 0:
+        print('\033[31mResposta inválida! Tente novamente.\033[m')
         user = str(input('Deseja continuar?\033[40m[S/N]\033[m ')).upper()
     if user == 'N':
         break
     elif user == 'S':
         num += 1
 
-
+print('=-=' * 15)
 print(f'Foram cadastradas {num} pessoas.')
 print(pessoas)
+print(f'O maior peso é {maior_peso:.2f}kg, que pertence a: {nome_maior_peso}')
+print(f'O menor peso é {menor_peso:.2f}kg, que pertence a: {nome_menor_peso}')
