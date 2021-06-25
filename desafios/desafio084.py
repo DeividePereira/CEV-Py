@@ -2,8 +2,7 @@ dados = list()
 pessoas = list()
 nome_maior_peso = list()
 nome_menor_peso = list()
-num = 1
-maior_peso = menor_peso = 1
+num = maior_peso = menor_peso = 1
 
 while True:
     nome = str(input(f'Digite o nome da pessoa n°{num}: ')).strip().title()
@@ -16,8 +15,8 @@ while True:
     while str(peso).isalpha():
         print('\033[31mResposta inválida! Tente novamente.\033[m')
         peso = float(input(f'Digite o peso, em kg, da pessoa n°{num}: '))
-    # O primeiro peso como parâmetro, marcar quem é o dono pelo num.
-    if num == 1:        #Desse modo, não vai contar o nome da primeira pessoa no maior e menor.
+
+    if num == 1:    #Usando o primeiro peso como parâmetro, marcando o dono pelo num.
         maior_peso = peso
         nome_maior_peso.append(nome)
         menor_peso = peso
