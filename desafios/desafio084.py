@@ -53,6 +53,5 @@ while True:
 
 print('=-=' * 15)
 print(f'Foram cadastradas {num} pessoas.')
-print(pessoas)
 print(f'O maior peso é {maior_peso:.2f}kg, que pertence a: {nome_maior_peso}')
 print(f'O menor peso é {menor_peso:.2f}kg, que pertence a: {nome_menor_peso}')
