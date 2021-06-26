@@ -1,4 +1,4 @@
-#matriz 3x3, começando do 0,0 -> 0,0
+# Matriz 3x3.
 list = ([], [], [], [], [], [], [], [], [])
 contador = 0
 x = y = 1
@@ -21,5 +21,5 @@ for a in list:     #a é cada item da list.
         print(f'| {b:^5} ', end='')
 
         if contador != 0 and (contador % 3) - 2 == 0:  #(8 % 3)-2;
-            print('|\n', end='')
+            print('|')
         contador += 1

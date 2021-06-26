@@ -1,5 +1,5 @@
-# Melhoria do desafio086b; matriz NxN, o usuário deve determinar N. Desafio proposto por mim mesmo.
-# a) a soma de todas os valores pares digitados; b) A soma dos valores da coluna 3; c) O maior valor da linha 2
+# Melhoria do desafio086b: matriz NxN, o usuário deve determinar N. a) a soma de todas os valores pares digitados;
+# b) A soma dos valores da coluna 3; c) O maior valor da linha 2
 list = list()
 list_elemento = []
 ex_cont = contador = soma_pares = maior_l2 = soma_c3 = 0
@@ -11,7 +11,7 @@ for e in exemplo:
     for ex in e:
         print(f'| {ex:^5} ', end='')
         if ex_cont != 0 and (ex_cont % 2) - 1 == 0:
-            print('|\n', end='')
+            print('|')
         ex_cont += 1
 print('-' * 45)
 
@@ -58,11 +58,11 @@ for a in list:     #a é cada item da list.
         print(f'| {b:^5} ', end='')
 
         if contador + 1 == user:
-            print('|\n', end='')
+            print('|')
             contador = 0
         else:
             contador += 1
-print('-' * 45)
+print('=-=' * 15)
 print(f'O somatório dos números pares é: {soma_pares}')
 print(f'O somatório dos números da terceira coluna é: {soma_c3}')
 print(f'O maior valor da segunda linha é: {maior_l2}')

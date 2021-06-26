@@ -1,4 +1,4 @@
-# Melhoria do desafio086; matriz 3x3; a) a soma de todas os valores pares digitados;
+# Melhoria do desafio086: matriz 3x3; a) a soma de todas os valores pares digitados;
 # b) A soma dos valores da terceira coluna; c) O maior valor da segunda linha
 list = ([], [], [], [], [], [], [], [], [])
 contador = soma_pares = maior_l2 = soma_c3 = 0
@@ -33,7 +33,7 @@ for a in list:     #a é cada item da list.
         print(f'| {b:^5} ', end='')
 
         if contador != 0 and (contador % 3) - 2 == 0:
-            print('|\n', end='')
+            print('|')
         contador += 1
 
 c3 = list[2] + list[5] + list[8]

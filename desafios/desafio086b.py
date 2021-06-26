@@ -1,4 +1,4 @@
-#matriz NxN, o usuário deve determinar N. Desafio proposto por mim mesmo.
+# Matriz NxN, o usuário deve determinar N.
 list = list()
 list_elemento = []
 ex_cont = contador = 0
@@ -10,7 +10,7 @@ for e in exemplo:
     for ex in e:
         print(f'| {ex:^5} ', end='')
         if ex_cont != 0 and (ex_cont % 2) - 1 == 0:
-            print('|\n', end='')
+            print('|')
         ex_cont += 1
 print('-' * 45)
 
@@ -29,7 +29,7 @@ for n in range(0, sudo):
     list.append(list_elemento[:])
     list_elemento.clear()
 
-    if y == user:    #((0,0), (1,0),..., (user,0) (0,1), (1,1),..., (user,1),..., (user, user)
+    if y == user:    #((1,1), (2,1),..., (user,1) (1,2), (2,2),..., (user,2),..., (user, user)
         y = 1
         x += 1
     elif x == user and y == user:  #Fim da matriz NxN
@@ -44,7 +44,7 @@ for a in list:     #a é cada item da list.
         print(f'| {b:^5} ', end='')
 
         if contador + 1 == user:
-            print('|\n', end='')
+            print('|')
             contador = 0
         else:
             contador += 1

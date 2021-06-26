@@ -1,9 +1,7 @@
 lista = ([], [])
-for n in range(1, 7):
-    num = int(input(f'Digite o {n}° número natural: '))
-#    while str(num).isalpha():                           #Não funciona
-#        print('Resposta inválida! Tente novamente.')
-#        num = int(input(f'Digite o {n}° número natural: '))
+for n in range(0, 6):
+    num = int(input(f'Digite o {n + 1}° número natural: '))
+
     if num % 2 == 0:
         lista[0].append(num)
     else:
