@@ -4,9 +4,9 @@ aluno = list()          #Sublista de boletim
 notas = list()          #Sublista da aluno
 media_list = list()
 num = 1
-nome = 'Boletim da Escola Ant\'s Harpoon'
+empresa = "Boletim da Escola Ant\'s Harpoon"
 print('-' * 45)
-print(f'{nome:^45}')
+print(f'{empresa:^45}')
 print('-' * 45)
 while True:
     nome = str(input(f'Digite o nome do aluno n°{num}: ')).title().strip()
@@ -58,12 +58,9 @@ while True:
     # print(boletim[1]) --> ['Anna', [9.0, 10.0], [9.5]]
 
 print('-' * 45)
-title1 = 'N°'
-title2 = 'Nome'
-title3 = 'Média'
-print(f'{title1:<4}| {title2:<30}| {title3:<4}')
+print(f'{"N°":<4}| {"Nome":<30}| {"Média":<4}')
 for b in range(0, num):
-    print(f'{b + 1:<4}| {boletim[b][0]:<30}| {boletim[b][2][0]:<4}')
+    print(f'{b + 1:<4}| {boletim[b][0]:<30}| {boletim[b][2][0]:<4.1f}')
 print('-' * 45)
 while True:
     sudo = str(input('Deseja ver as notas de algum aluno?\033[40m[S/N]\033[m ')).upper().strip()
