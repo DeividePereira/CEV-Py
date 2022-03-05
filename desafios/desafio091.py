@@ -1,17 +1,13 @@
-#1-4jogadores: cada um joga um dado.
-#2-Guarde os resultados em dicionários.
-#3-Organize os dados em ordem decrescente.
-#4-Print os resultados dos dados e o ranking.
+#1-4jogadores: cada um joga um dado. 2-Guarde os resultados em dicionários.
+#3-Organize os dados em ordem decrescente. #4-Print os resultados dos dados e o ranking.
 from random import randint
-all = list()
-dices = dict()
-all.append(dices)
-for n in range(1, 5):
-    dices[f'{n}'] = randint(1,7)
-    all.append(dices.copy())
-    print(f'O jogador {n} tirou {dices.values()[f"{n}"]}.')
-    #{dices}->está mostrando as keys
-    n += 1
+from time import sleep
+dici = dict()
+for n in range(1,5): #4 jogadores = 4 rolagens de dado
+    dici[f'Jogador {n}'] = randint(1,6) #o dado tem 6 lados
 
-print(all)
-print(dices)
+print('Nota: Dado de 6 lados.\n----- Ranking -----')
+ranking = sorted(dici.items(), key=lambda x: x[1], reverse=True) #tupla
+for i in ranking:
+    print(f'O {i[0]} tirou {i[1]}.')
+    sleep(1)
