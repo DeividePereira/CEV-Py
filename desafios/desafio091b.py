@@ -1,4 +1,4 @@
-#desafio091 mas com o usuário selecionando o número de jogadores, o nome dos jogadores e quantos lados tem o dado.
+#desafio091 mas o usuário seleciona o número de jogadores, o nome dos jogadores e quantos lados tem o dado.
 from random import randint
 from time import sleep
 dici = dict()
@@ -16,9 +16,9 @@ while num_lado <= 1:
 jogador = 'a'
 for n in range(1, rolagens + 1):
     jogador = str(input(f'Digite o nome do jogador nº{n}: '))
-    while len(jogador) == 0 or jogador.isnumeric or jogador.isspace:
-        print('Erro! Tente novamente.')
-        jogador = str(input(f'Digite o nome do jogador nº{n}: '))
+    #while len(jogador) == 0 or jogador.isnumeric or jogador.isspace:
+    #    print('Erro! Tente novamente.')
+    #    jogador = str(input(f'Digite o nome do jogador nº{n}: '))
     dici[f'{jogador}'] = randint(1,num_lado)
 
 print(f'Nota: Dado de {num_lado} lados.\n----- Ranking -----')

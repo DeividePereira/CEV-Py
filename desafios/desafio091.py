@@ -1,5 +1,5 @@
 #1-4jogadores: cada um joga um dado. 2-Guarde os resultados em dicionários.
-#3-Organize os dados em ordem decrescente. #4-Print os resultados dos dados e o ranking.
+#3-Organize os dados em ordem decrescente. 4-Print os resultados dos dados e o ranking.
 from random import randint
 from time import sleep
 dici = dict()
