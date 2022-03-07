@@ -1,6 +1,6 @@
 dici = dict()
 lista_dicis = list()
-soma_idade = 0
+soma_idade = d = f = 0
 mulheres = list()
 idade_acima = list()
 
@@ -40,10 +40,14 @@ for b in lista_dicis:
     if b['idade'] > media_idade:
         idade_acima.append(b['nome'])
 
+print('-=' *30)
 print(f'Foram registradas {num_pessoas} pessoas.')
 print(f'A média das idades é {media_idade:.2f}.')
-print(f'As mulheres são: {mulheres}.', end="")
-for c in {mulheres}:
-    print(mulheres[c], end=', ')
-print('\n')
-print(f'As pessoas com idade acima da média de idade são: {idade_acima}')
+print(f'As mulheres são: ', end='')
+for c in mulheres:
+    print(f'{mulheres[d]}, ', end='')
+    d += 1
+print(f'\nAs pessoas com idade acima da média de idade são: ', end='')
+for e in idade_acima:
+    print(f'{idade_acima[f]}, ', end='')
+    f += 1
