@@ -1,5 +1,4 @@
-# desafio094, mas alterando "num_pessoas = int(input('Quantas pessoas deseja cadastrar? '))"
-# por estrutura while com input "S/N", dizendo no fim o número de pessoas.(é só fazer um contador)
+# desafio094, com estrutura while  "S/N", dizendo no fim o número de pessoas
 dici = dict()
 l_dicis = list()
 soma_idade = d = f = 0
