@@ -1,5 +1,3 @@
-# Crie a função escreva(), que receba um texto qualquer como parâmetro
-# mostre uma mensagem com tamanho adaptável, como "------".
 def escreva(txt):
     print(f'-' * (len(txt) + 4))
     print(f'  {txt}')
