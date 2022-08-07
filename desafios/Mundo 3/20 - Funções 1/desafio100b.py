@@ -13,7 +13,7 @@ def sorteia():
 	user_b = int(input('  Qual é o número máximo? '))
 	while user_b <= user_a:
 		print(f'   \033[31mErro!\033[m Não pode ser menor que {user_a}.')
-		user_b = int(input('  Quantos números deseja sortear? '))
+		user_b = int(input('  Quantos é o número máximo? '))
 
 	print('-' * 20, f'\nSorteando {user_n} números de {user_a} a {user_b}...')
 	for e in range(0,user_n):
