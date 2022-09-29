@@ -1,13 +1,13 @@
 # Colocar todos em uma lista -> copiar para as duas outras listas -> separar em impares e pares
 # versão com num = int() e a passagem pras duas listas diferente.
-list = list()
-list_even = []
-list_odd = []
+lista = list()
+lista_even = []
+lista_odd = []
 user = 0
 while user != 'N':
     num = int(input('Digite um número: '))
-    if list.count(num) == 0:  #Checando se o valor é único.
-        list.append(num)
+    if lista.count(num) == 0:  # Checando se o valor é único.
+        lista.append(num)
 
     user = str(input('Você gostaria de continuar?\033[40m[S/N]\033[m ')).strip().upper()
     while user != 'S' and user != 'N' or user.isspace() or user == '':
@@ -18,12 +18,12 @@ while user != 'N':
     if user == 'N':
         break
 
-for a in list:
+for a in lista:
     if a % 2 == 0:
-        list_even.append(a)  # par
+        lista_even.append(a)  # par
     else:
-        list_odd.append(a)  # ímpar
+        lista_odd.append(a)  # ímpar
 
-print(f'\nLista: {list}')
-print(f'Lista com os números pares: {list_even}')
-print(f'Lista com os números ímpares: {list_odd}')
+print(f'\nLista: {lista}')
+print(f'Lista com os números pares: {lista_even}')
+print(f'Lista com os números ímpares: {lista_odd}')

@@ -11,11 +11,11 @@ while user != 'N':
     num = str(input('Digite um número: '))
     while not num.isnumeric():
         num = str(input('Digite um número: '))
-    if list.count(num) == 0:  #Checando se o valor é único.
+    if list.count(num) == 0:  # Checando se o valor é único.
         list.append(num)
 
     user = str(input('Você gostaria de continuar?\033[40m[S/N]\033[m ')).strip().upper()
-    while user != 'S' and user != 'N' or user.isspace() or user == '':  #Checando se foi S ou N.
+    while user != 'S' and user != 'N' or user.isspace() or user == '':  # Checando se foi S ou N.
         print('\033[31mResposta inválida! Tente novamente!\033[m')
         user = str(input('Você gostaria de continuar?\033[40m[S/N]\033[m ')).strip().upper()
         if user == 'N':
@@ -31,7 +31,7 @@ print(list)
 #3 print(f'A lista decrescente é:\n{list.reverse()}')  #erro: "None"
 
 print(list.sort())  #4
-list.sort()  #está dando erro pq está como STR
+list.sort()  # está dando erro pq está como STR
 print(list[::-1])
 list_rev = list[::-1]
 print(f'A lista decrescente é:\n{list_rev}')  #erro desconhecido

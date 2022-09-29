@@ -1,4 +1,4 @@
-# desafio094, com estrutura while  "S/N", dizendo no fim o número de pessoas
+# desafio094, com estrutura while "S/N", dizendo no fim o número de pessoas
 dici = dict()
 l_dicis = list()
 soma_idade = d = f = 0
@@ -46,7 +46,7 @@ for b in l_dicis:
         d_idade_acima['idade'] = b['idade']
         l_d_idade_acima.append(d_idade_acima.copy())
         d_idade_acima.clear()
-print('-=' *30)
+print('-=' * 30)
 print(f'Foram registradas {num_pessoas} pessoas.')
 print(f'A média das idades é {media_idade:.2f}.')
 print(f'As mulheres são: ', end='')

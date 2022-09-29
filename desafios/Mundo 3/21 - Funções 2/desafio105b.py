@@ -1,29 +1,26 @@
+# desafio105.py, mas usando empacotamento
 from random import randint
 
 
-def notas(a, b, c, d, situation=False):
+def notas(*n, situation=False):
     """
     Função para analisar notas e situações de um aluno.
-    notas(a,b,c,d, situation='False')
-    :param a: primeira nota.
-    :param b: segunda nota.
-    :param c: terceira nota.
-    :param d: quarta nota.
+    notas(*n, situation='False')
+    :param n: as notas do aluno.
     :param situation: opcional, define se aparecerá ou não a situação.
     """
     lista = list()
     dicio = dict()
-    lista.append(a)
-    lista.append(b)
-    lista.append(c)
-    lista.append(d)
+    for num in n:
+        if not str(num) == 'True':
+            lista.append(num)
 
     dicio['total'] = len(lista)
     dicio['maior'] = max(lista)
     dicio['menor'] = min(lista)
     dicio['media'] = sum(lista) / dicio['total']
 
-    if sum(lista) / dicio['total'] >= 6:
+    if sum(lista) / dicio['total'] >= 5:  # 50% de chance
         dicio['situation'] = 'aprovado'
     else:
         dicio['situation'] = 'reprovado'
@@ -31,8 +28,7 @@ def notas(a, b, c, d, situation=False):
     print(f'As notas foram: ', end='')
     for n in lista:
         print(f'{n}', end=' | ')
-    print('')
-    print(f'Foram um total de {dicio["total"]} notas.')
+    print(f'\nForam um total de {dicio["total"]} notas.')
     print(f'A maior nota foi {dicio["maior"]}.')
     print(f'A menor nota foi {dicio["menor"]}.')
     print(f'A média foi {dicio["media"]}.')
