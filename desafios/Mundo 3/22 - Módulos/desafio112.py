@@ -6,29 +6,13 @@ from utilidadescev import moeda
 from random import randint
 from time import sleep
 
-user = dados.leia_dinheiro(1)
-moeda.resumo(user, randint(1, 100), randint(1, 100))
-sleep(0.3)
+testes = (1, 2.3, '5.67', '8,901', str(input('Digite o preço: R$')))
+print('-' * 25)
+for cada_teste in testes:
+    user = dados.leia_dinheiro(cada_teste)
+    moeda.resumo(user, randint(1, 100), randint(1, 100))
+    sleep(1.25)
+    print('-' * 25)
 
-user = dados.leia_dinheiro(2.3)
-moeda.resumo(user, randint(1, 100), randint(1, 100))
-sleep(0.3)
-
-user = dados.leia_dinheiro('4')
-moeda.resumo(user, randint(1, 100), randint(1, 100))
-sleep(0.3)
-
-user = dados.leia_dinheiro('5.67')
-moeda.resumo(user, randint(1, 100), randint(1, 100))
-sleep(0.3)
-
-user = dados.leia_dinheiro('8,901')
-moeda.resumo(user, randint(1, 100), randint(1, 100))
-sleep(0.3)
-
-print('-' * 35)
-user = dados.leia_dinheiro(str(input('Digite o preço: R$')))
-moeda.resumo(user, randint(1, 100), randint(1, 100))
-sleep(0.3)
-print('-' * 35)
 print('Encerrando...')
+sleep(1.25)
