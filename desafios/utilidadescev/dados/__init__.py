@@ -49,3 +49,33 @@ def leia_dinheiro(user):
         else:
             print('-' * 20)
             user = str(input('Digite o preço: R$'))
+
+
+def leia_int(user):
+    while True:
+        try:
+            num = int(input(user))
+
+        except TypeError:  # float
+            print('\033[31mErro! Foi digitado um número inteiro não-válido.\033[m')
+        except ValueError:  # 1.0 \ #! \   \ æ
+            print('\033[31mErro! Foi digitado algum caractere não-numérico.\033[m')
+            continue
+
+        else:
+            return num
+
+
+def leia_float(user):
+    while True:
+        try:
+            num = float(input(user))
+
+        except ValueError:  # 1.0 \ #! \   \ æ
+            print('\033[31mErro! Foi digitado algum caractere não-numérico.\033[m')
+            continue
+
+        else:
+            return num
+
+
