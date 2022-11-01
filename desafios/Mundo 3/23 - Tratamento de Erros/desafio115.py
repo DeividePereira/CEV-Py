@@ -1,8 +1,9 @@
 from utilidadescev import contatos
 from utilidadescev.dados import leia_int
 
-spacing = 40
+spacing = 50
 arquivo = 'contatos.txt'
+menu1 = 'Menu'
 
 contatos.titulo_centralizado('Sistema de Registro de Pessoas', spacing, '\033[40m')
 
@@ -13,16 +14,13 @@ while True:
     check_name = 0
     n = 0
 
-    print('\033[40m                  Menu                  \033[m'
-          '\n\033[40m[1]\033[m Cadastrar uma nova pessoa'
-          '\n\033[40m[2]\033[m Listar todo o cadastro'
-          '\n\033[40m[3]\033[m Encerrar sistema')
+    print(f'\033[40m{menu1:^{spacing}}\033[m'
+          '\n\033[36;40m[1]\033[m Cadastrar uma nova pessoa'
+          '\n\033[36;40m[2]\033[m Listar todo o cadastro'
+          '\n\033[36;40m[3]\033[m Encerrar sistema')
 
     try:
-        user = str(input('Opção: '))
-
-        if user != '1' and user != '2' and user != '3':
-            print('\033[31mErro! Tente novamente.\033[m')
+        user = str(input('\033[36mSua Opção: \033[m'))
 
         if user == '1':
             contatos.titulo_centralizado('Cadastrar Uma Pessoa', spacing, '\033[40m')
@@ -48,23 +46,34 @@ while True:
                     break
 
                 else:
-                    age = leia_int()
+                    try:
+                        age = leia_int()
+                    except KeyboardInterrupt:
+                        print('\033[33m\nInterrompido manualmente.\033[m')
+                        break
 
-                    mais_contatos = ['', name, str(age)]
-                    with open('contatos.txt', 'a') as f:
-                        f.write('\n'.join(mais_contatos))
+                    else:
+                        mais_contatos = ['', name, str(age)]
+                        with open('contatos.txt', 'a') as f:
+                            f.write('\n'.join(mais_contatos))
 
-                    print(f'O/A {name} de {age} anos foi adicionado(a) com \033[32msucesso\033[m.')
-                    break
+                        print(f'\033[32mSucesso!\033[m {name} foi registrado(a).')
+                        print('-' * spacing)
+                        break
 
-        if user == '2':
+        elif user == '2':
             contatos.titulo_centralizado('Lista de todos cadastrados', spacing, '\033[40m')
 
-            contatos.ler_arquivo(arquivo)
+            #contatos.ler_arquivo(arquivo)
+            contatos.ler_arquivo_v2(arquivo, spacing)
+            print('-' * spacing)
 
-        if user == '3':
+        elif user == '3':
             print('\nEncerrando...')
             break
+
+        else:  #if user != '1' and user != '2' and user != '3':
+            print('\033[31mErro! Tente novamente.\033[m')
 
     except KeyboardInterrupt:
         print('\033[33m\nInterrompido manualmente.\033[m'

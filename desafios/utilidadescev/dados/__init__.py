@@ -61,10 +61,6 @@ def leia_int():
         except ValueError:  # 1.0 \ #! \   \ æ
             print('\033[31mErro! Foi digitado algum caractere não-numérico.\033[m')
             continue
-        except KeyboardInterrupt:
-            print('\033[33m\nInterrompido manualmente.\033[m')
-            break
-
         else:
             return num
 
