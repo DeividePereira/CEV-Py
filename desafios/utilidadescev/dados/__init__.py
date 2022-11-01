@@ -51,16 +51,19 @@ def leia_dinheiro(user):
             user = str(input('Digite o preço: R$'))
 
 
-def leia_int(user):
+def leia_int():
     while True:
         try:
-            num = int(input(user))
+            num = int(input('Idade: '))
 
         except TypeError:  # float
             print('\033[31mErro! Foi digitado um número inteiro não-válido.\033[m')
         except ValueError:  # 1.0 \ #! \   \ æ
             print('\033[31mErro! Foi digitado algum caractere não-numérico.\033[m')
             continue
+        except KeyboardInterrupt:
+            print('\033[33m\nInterrompido manualmente.\033[m')
+            break
 
         else:
             return num

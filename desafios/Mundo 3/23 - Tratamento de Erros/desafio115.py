@@ -1,13 +1,22 @@
-print('--------------------------------'
-      '\n\033[40m Sistema de Registro de Pessoas \033[m'
-      '\n--------------------------------')
+from utilidadescev import contatos
+from utilidadescev.dados import leia_int
+
+spacing = 40
+arquivo = 'contatos.txt'
+
+contatos.titulo_centralizado('Sistema de Registro de Pessoas', spacing, '\033[40m')
+
+if not contatos.arquivo_existe(arquivo):
+    contatos.criar_arquivo(arquivo)
+
 while True:
-    check_name = False
+    check_name = 0
     n = 0
-    print('\033[40m              Menu              \033[m'
+
+    print('\033[40m                  Menu                  \033[m'
           '\n\033[40m[1]\033[m Cadastrar uma nova pessoa'
           '\n\033[40m[2]\033[m Listar todo o cadastro'
-          '\n\033[40m[3]\033[m Encerrar programa')
+          '\n\033[40m[3]\033[m Encerrar sistema')
 
     try:
         user = str(input('Opção: '))
@@ -16,55 +25,42 @@ while True:
             print('\033[31mErro! Tente novamente.\033[m')
 
         if user == '1':
-            print('--------------------------------'
-                  '\n\033[40m      Cadastrar Uma Pessoa      \033[m'
-                  '\n--------------------------------')
-            while True:
-                if not check_name:
-                    try:
-                        name = str(input('Nome: ')).strip()
+            contatos.titulo_centralizado('Cadastrar Uma Pessoa', spacing, '\033[40m')
 
-                        if name.isnumeric():
-                            print('\033[31mErro! Foram digitados apenas caracteres numéricos.\033[m')
-                            while name.isnumeric():
-                                name = str(input('Nome: '))
-                    except KeyboardInterrupt:
-                        print('\033[33mInterrompido manualmente.\033[m')
-                        break
-                    else:
-                        check_name = True
-
+            while not check_name == 2:
                 try:
-                    age = int(input('Idade: '))
+                    name = str(input('Nome: ')).strip()
 
-                except ValueError:  # 1.0 \ #! \   \ æ \ abc
-                    print('\033[31mErro! Foi digitado algum caractere não-numérico.\033[m')
-                    continue
+                    while name.isnumeric():
+                        print('\033[31mErro! Foram digitados apenas caracteres numéricos.\033[m')
+                        name = str(input('Nome: ')).strip()
+                    else:
+                        check_name += 1
+
+                    while name == '':
+                        print('\033[31mErro! Nada foi inserido.\033[m')
+                        name = str(input('Nome: ')).strip()
+                    else:
+                        check_name += 1
+
                 except KeyboardInterrupt:
-                    print('\033[33mInterrompido manualmente.\033[m')
+                    print('\033[33m\nInterrompido manualmente.\033[m')
                     break
 
                 else:
-                    more_lines = ['', name, str(age)]
+                    age = leia_int()
+
+                    mais_contatos = ['', name, str(age)]
                     with open('contatos.txt', 'a') as f:
-                        f.write('\n'.join(more_lines))
+                        f.write('\n'.join(mais_contatos))
 
                     print(f'O/A {name} de {age} anos foi adicionado(a) com \033[32msucesso\033[m.')
                     break
 
         if user == '2':
-            print('--------------------------------'
-                  '\n\033[40m   Lista de todos cadastrados   \033[m'
-                  '\n--------------------------------')
+            contatos.titulo_centralizado('Lista de todos cadastrados', spacing, '\033[40m')
 
-            with open('contatos.txt') as f:
-                for line in f:
-                    n += 1
-                    if n % 2 != 0:
-                        print(f'Nome: {line.strip()}')
-                    else:
-                        print(f'Idade: {line.strip()}')
-                        print('--------------------------------')
+            contatos.ler_arquivo(arquivo)
 
         if user == '3':
             print('\nEncerrando...')
